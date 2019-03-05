@@ -32,6 +32,7 @@
             this.менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.задане1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.задание2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.задание3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,8 @@
             // 
             this.менюToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.задане1ToolStripMenuItem,
-            this.задание2ToolStripMenuItem});
+            this.задание2ToolStripMenuItem,
+            this.задание3ToolStripMenuItem});
             this.менюToolStripMenuItem.Name = "менюToolStripMenuItem";
             this.менюToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.менюToolStripMenuItem.Text = "Меню";
@@ -67,6 +69,13 @@
             this.задание2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.задание2ToolStripMenuItem.Text = "Задание 2";
             this.задание2ToolStripMenuItem.Click += new System.EventHandler(this.задание2ToolStripMenuItem_Click);
+            // 
+            // задание3ToolStripMenuItem
+            // 
+            this.задание3ToolStripMenuItem.Name = "задание3ToolStripMenuItem";
+            this.задание3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.задание3ToolStripMenuItem.Text = "Задание 3";
+            this.задание3ToolStripMenuItem.Click += new System.EventHandler(this.задание3ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -90,6 +99,7 @@
         private System.Windows.Forms.ToolStripMenuItem менюToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem задане1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem задание2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem задание3ToolStripMenuItem;
     }
 }
 
