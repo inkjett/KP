@@ -66,8 +66,6 @@ namespace KP
                 }
 
                 one_arr.Add(F[i]);
-
-
                 temp_value = 0;
                 need_to_find_number = true;
                 firstNumber = 0;
@@ -98,14 +96,19 @@ namespace KP
 
         }
 
-        public void method_del_max_values(int[] arr_in, int max_value,out int[] arr_out)
+        public void method_del_max_values(int[] arr_in, int max_value,out int[] arr_out) // метод удаления максимального числа из массива
         {
-            Int32 count_for_Length=0;
+            Int32 count_for_Length = 0;
+            Int32 count_for_arr = 0;
             for (int i = 0; i < arr_in.Length; i++)
             {
                 if (max_value != arr_in[i])
                 {
                     count_for_Length++;
+                }
+                else
+                {
+                    count_for_arr++;
                 }
             }
             arr_out = new int [count_for_Length];
@@ -113,10 +116,63 @@ namespace KP
             {
                 if (max_value!=arr_in[i])
                 {
-                    arr_out[i] = arr_in[i];
+                    arr_out[i- count_for_arr] = arr_in[i];
                 }
             }
         }
+
+        public void method_incsert_one(int [] arr_in, int max_value, out int[] arr_out)
+        {
+            Int32 count_for_Length = 0;
+            Int32 firstNumber=0, secondNumber=0, temp_count ,temp_value;
+            Boolean need_to_find_number;
+
+            for (int i = 0; i < arr_in.Length; i++) // определение длины нового массива
+            {
+                temp_value = Convert.ToInt32(arr_in[i]);
+                need_to_find_number = true;
+                while ((temp_value != 0) && (need_to_find_number == true))
+                {
+                    secondNumber = temp_value % 10;
+                    firstNumber = temp_value / 10;
+                    temp_value = firstNumber;
+                    if ((firstNumber == 1) || (secondNumber == 1))
+                    { need_to_find_number = false; }
+
+                }
+                if ((firstNumber == 1) || (secondNumber == 1))
+                {
+                    count_for_Length++;
+                }
+            }
+            arr_out = new int[arr_in.Length + count_for_Length];// создание нового массива нобходимого размера
+            for (int i = 0; i < arr_in.Length; i++) // заполнение нового массива
+            {
+                temp_count = 0;
+                temp_value = Convert.ToInt32(arr_in[i]);
+                need_to_find_number = true;
+                while ((temp_value != 0) && (need_to_find_number == true))
+                {
+                    secondNumber = temp_value % 10;
+                    firstNumber = temp_value / 10;
+                    temp_value = firstNumber;
+                    if ((firstNumber == 1) || (secondNumber == 1))
+                    { need_to_find_number = false; }
+
+                }
+                if ((firstNumber == 1) || (secondNumber == 1))
+                {
+                    arr_out[i] = max_value;
+                    temp_count++;
+                }
+                else
+                {
+                    arr_out[i+temp_count] = arr_in[i];
+                }
+            }
+        }
+
+
 
         public Form4()
         {
