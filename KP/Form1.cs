@@ -19,7 +19,13 @@ namespace KP
 
         private void задане1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form2 Zadanie2 = new Form2();
+            Form2 Zadanie1 = new Form2();
+            Zadanie1.Show();
+        }
+
+        private void задание2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 Zadanie2 = new Form3();
             Zadanie2.Show();
         }
     }

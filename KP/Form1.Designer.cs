@@ -66,6 +66,7 @@
             this.задание2ToolStripMenuItem.Name = "задание2ToolStripMenuItem";
             this.задание2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.задание2ToolStripMenuItem.Text = "Задание 2";
+            this.задание2ToolStripMenuItem.Click += new System.EventHandler(this.задание2ToolStripMenuItem_Click);
             // 
             // Form1
             // 
