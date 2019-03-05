@@ -40,6 +40,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -145,11 +148,42 @@
             this.label5.TabIndex = 26;
             this.label5.Text = "Массив после удаления максимальных элементов";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(112, 303);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(309, 23);
+            this.button3.TabIndex = 27;
+            this.button3.Text = "Добавить";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(12, 277);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(468, 20);
+            this.textBox6.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 250);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(530, 13);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Массив после добаления максимального значения перед всеми значениями в записи кот" +
+    "орых есть 1";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 486);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button2);
@@ -183,5 +217,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label6;
     }
 }

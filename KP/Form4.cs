@@ -16,6 +16,7 @@ namespace KP
         //описание переменных
         Int32[] arr_main;
         Int32[] arr_del_max_values;
+        Int32[] arr_insert_one;
         Int32 max_value;
         //ArrayList c, d, arr_of_one = new ArrayList();
 
@@ -104,7 +105,7 @@ namespace KP
             {
                 if (max_value != arr_in[i])
                 {
-                    count_for_Length++;
+                    count_for_Length++;//переменная для длинны массива
                 }
                 else
                 {
@@ -112,19 +113,24 @@ namespace KP
                 }
             }
             arr_out = new int [count_for_Length];
+            Int32 temp_for_minus = 0;// счетчик если был максимально число равно.
             for (int i=0; i<arr_in.Length;i++)
             {
-                if (max_value!=arr_in[i])
+                if (max_value != arr_in[i])
                 {
-                    arr_out[i- count_for_arr] = arr_in[i];
+                    arr_out[i- temp_for_minus] = arr_in[i];
+                }
+                else
+                {
+                    temp_for_minus++;
                 }
             }
         }
 
-        public void method_incsert_one(int [] arr_in, int max_value, out int[] arr_out)
+        public void method_incsert_one(int [] arr_in, int max_value, out int[] arr_out)//Добавление максимального числа перед всеми числами в которых есть 1
         {
             Int32 count_for_Length = 0;
-            Int32 firstNumber=0, secondNumber=0, temp_count ,temp_value;
+            Int32 firstNumber=0, secondNumber=0, temp_count=0,temp_value;
             Boolean need_to_find_number;
 
             for (int i = 0; i < arr_in.Length; i++) // определение длины нового массива
@@ -147,8 +153,7 @@ namespace KP
             }
             arr_out = new int[arr_in.Length + count_for_Length];// создание нового массива нобходимого размера
             for (int i = 0; i < arr_in.Length; i++) // заполнение нового массива
-            {
-                temp_count = 0;
+            {                
                 temp_value = Convert.ToInt32(arr_in[i]);
                 need_to_find_number = true;
                 while ((temp_value != 0) && (need_to_find_number == true))
@@ -162,17 +167,16 @@ namespace KP
                 }
                 if ((firstNumber == 1) || (secondNumber == 1))
                 {
-                    arr_out[i] = max_value;
+                    arr_out[i + temp_count] = max_value;
+                    arr_out[i + 1 + temp_count] = arr_in[i];
                     temp_count++;
                 }
                 else
                 {
-                    arr_out[i+temp_count] = arr_in[i];
+                    arr_out[i + temp_count] = arr_in[i];
                 }
             }
         }
-
-
 
         public Form4()
         {
@@ -200,6 +204,18 @@ namespace KP
             arr_main = new Int32[n]; // инициализация массива, заполнен 0
             gen_arr(c, d, ref arr_main); // передача в метод данных о массиве
             method_arr_out(arr_main, textBox4); // вывод данных из масиива в текст
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            method_max_value(arr_main, out max_value);
+            method_incsert_one(arr_main,max_value,out arr_insert_one);
+            method_arr_out(arr_insert_one, textBox6);
         }
     }
 }
