@@ -185,10 +185,17 @@ namespace KP
 
         private void button2_Click(object sender, EventArgs e)
         {
-            arr_del_max_values = new Int32[arr_main.Length];
-            method_max_value(arr_main, out max_value);
-            method_del_max_values(arr_main, max_value, out arr_del_max_values);
-            method_arr_out(arr_del_max_values,textBox5);
+            try
+            {
+                arr_del_max_values = new Int32[arr_main.Length];
+                method_max_value(arr_main, out max_value);
+                method_del_max_values(arr_main, max_value, out arr_del_max_values);
+                method_arr_out(arr_del_max_values, textBox5);
+            }
+            catch
+            {
+                MessageBox.Show("Сгенерируйте маасив", "Сообщение", MessageBoxButtons.OK);
+            }
         }
 
         private void Form4_Load(object sender, EventArgs e)
@@ -213,9 +220,21 @@ namespace KP
 
         private void button3_Click_1(object sender, EventArgs e)
         {
-            method_max_value(arr_main, out max_value);
-            method_incsert_one(arr_main,max_value,out arr_insert_one);
-            method_arr_out(arr_insert_one, textBox6);
+            try
+            {
+                method_max_value(arr_main, out max_value);
+                method_incsert_one(arr_main, max_value, out arr_insert_one);
+                method_arr_out(arr_insert_one, textBox6);
+            }
+            catch
+            {
+                MessageBox.Show("Сгенерируйте маасив", "Сообщение", MessageBoxButtons.OK);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
