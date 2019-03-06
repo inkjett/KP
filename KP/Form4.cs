@@ -18,17 +18,15 @@ namespace KP
         Int32[] arr_del_max_values;
         Int32[] arr_insert_one;
         Int32 max_value;
-        //ArrayList c, d, arr_of_one = new ArrayList();
 
-        //Int32 Count = 0;
-        public void gen_arr(Int32 a, Int32 b, ref Int32[] A) // метод заполнения массивва Нужно
+        public void gen_arr(Int32 a, Int32 b, ref Int32[] A) // метод заполнения массивва 
         {
             Random D = new Random();
             for (Byte i = 0; i < A.Length; i++)
                 A[i] = D.Next(a, b);
         }
 
-        public void method_arr_out(Int32[] A, TextBox b) // метод вывода данных массива Нужно
+        public void method_arr_out(Int32[] A, TextBox b) // метод вывода данных массива 
         {
             b.Text = "";
             foreach (Int32 a in A)
@@ -36,52 +34,12 @@ namespace KP
         }
 
 
-        public void one_in_value(ArrayList F, Int32 max_val, ref ArrayList result_arr) //Вчисление наличия еденицы в элемента массива возвращает массив
-        {
-            Int32 firstNumber, secondNumber, temp_value;
-            firstNumber = 0;
-            secondNumber = 0;
-            Boolean need_to_find_number = true;
-            ArrayList one_arr = new ArrayList();
-
-            for (byte i = 0; i < F.Count; i++)
-            {
-
-                temp_value = Convert.ToInt32(F[i]);
-                while ((temp_value != 0) && (need_to_find_number == true))
-                {
-                    secondNumber = temp_value % 10;
-                    firstNumber = temp_value / 10;
-                    temp_value = firstNumber;
-                    if ((firstNumber == 1) || (secondNumber == 1))
-                    { need_to_find_number = false; }
-
-                }
-
-
-                if ((firstNumber == 1) || (secondNumber == 1))
-                {
-                    Int32 temp_int = Convert.ToInt32(i);
-                    one_arr.Add(max_val);
-                    result_arr = one_arr;
-                }
-
-                one_arr.Add(F[i]);
-                temp_value = 0;
-                need_to_find_number = true;
-                firstNumber = 0;
-                secondNumber = 0;
-
-            }
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
+         private void button3_Click(object sender, EventArgs e)
         {
 
         }
 
-        public void method_max_value(int [] arr_in, out Int32 max_val) //вычисление максимального числа Нужно
+        public void method_max_value(int [] arr_in, out Int32 max_val) //вычисление максимального числа 
         {
             Int32 i = 0;
             max_val = 0;
@@ -194,7 +152,7 @@ namespace KP
             }
             catch
             {
-                MessageBox.Show("Сгенерируйте маасив", "Сообщение", MessageBoxButtons.OK);
+                MessageBox.Show("Сгенерируйте маcсив", "Сообщение", MessageBoxButtons.OK);
             }
         }
 
@@ -228,7 +186,7 @@ namespace KP
             }
             catch
             {
-                MessageBox.Show("Сгенерируйте маасив", "Сообщение", MessageBoxButtons.OK);
+                MessageBox.Show("Сгенерируйте маcсив", "Сообщение", MessageBoxButtons.OK);
             }
         }
 
