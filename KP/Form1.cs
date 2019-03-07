@@ -45,5 +45,11 @@ namespace KP
         {
             Close();
         }
+
+        private void dllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form6 Zadanie6 = new Form6();
+            Zadanie6.Show();
+        }
     }
 }
