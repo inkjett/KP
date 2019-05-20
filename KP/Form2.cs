@@ -142,17 +142,17 @@ namespace KP
                 for (x = Start; x <= End; x += Step)
                 {
                     Rezult = 0;
-                    if (x <= 1)
+                    if (Math.Round(x,1) <= 1)
                     {
                         Rezult = 2 * a * Math.Cos(x) + 3 * x * x; ;
                     }
-                    if ((1 < x) && (x <= 2))
+                    if ((1 < Math.Round(x,1)) && (Math.Round(x,1) <= 2))
                     {
                         Rezult = a * Math.Sin(x) + 3 * x * x; ;
                     }
-                    if (x > 2)
+                    if (Math.Round( x,1) > 2)
                     {
-                        Rezult = a * Math.Log(x) + Math.Pow(Math.Abs(x), 1 / 3);
+                        Rezult = a * Math.Log(x) + Math.Pow(Math.Abs(x), 1 / 3f);
                     }
                     textBox6.Text += String.Format("{0,10:F4}\r\n", Rezult);
                 }
@@ -164,37 +164,10 @@ namespace KP
         }
 
 
-        public void method_tab_func(Double Start, Double End, Double Step, Double a, out Int32 x_out, out Int32 Rezult2)
-        {
-            x_out = 0;
-            Rezult2 = 0;
-            for (x = Start; x <= End; x += Step)
-            {
-                Rezult = 0;
-                if (x <= 1)
-                {
-                    Rezult = 2 * a * Math.Cos(x) + 3 * x * x;
-                    Rezult2 = Convert.ToInt32(Rezult);
-                }
-                if ((1 < x) && (x <= 2))
-                {
-                    Rezult = a * Math.Sin(x) + 3 * x * x;
-                    Rezult2 = Convert.ToInt32(Rezult);
-                }
-                if (x > 2)
-                {
-                    Rezult = a * Math.Log(x) + Math.Pow(Math.Abs(x), 1 / 3);
-                    Rezult2 = Convert.ToInt32(Rezult);
-                }      
-                x_out= Rezult2 = Convert.ToInt32(Start);
-            }
-
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
-            Graphics F = pictureBox2.CreateGraphics();
-            F.Clear(Color.White);
+            Graphics F2 = pictureBox2.CreateGraphics();
+            F2.Clear(Color.White);
             double h;
             pictureBox1.Refresh();
             ax1 = 0; ay1 = 0; ax2 = 0; ay2 = 0;
@@ -207,45 +180,45 @@ namespace KP
             hx = Convert.ToDouble(textBox7.Text);
             hy = Convert.ToDouble(textBox2.Text);
             Extrem();
-            grid_x(F);
-            grid_y(F);
-            axis_x(F);
-            axis_y(F);
-            z_x(F); z_y(F);
+            grid_x(F2);
+            grid_y(F2);
+            axis_x(F2);
+            axis_y(F2);
+            z_x(F2); z_y(F2);
             h = 0.1;
-            Start = Double.Parse(textBox3.Text);
-            End = Double.Parse(textBox4.Text);
-            Step = Double.Parse(textBox5.Text);
+            float Start_grath = float.Parse(textBox3.Text);
+            float End_grath = float.Parse(textBox4.Text);
+            float Step_grath = float.Parse(textBox5.Text);
             a = Double.Parse(textBox1.Text);
             bool Graph_start = true;
-            for (x = Start; x <= End; x += Step)
+            PointF Point_1;
+            PointF Point_2;
+            Point_1 = new PointF(0, 0);
+            Point_2 = new PointF(0, 0);
+            float Rezult_grath = 0;
+            for (float x_grap = Start_grath; x_grap <= End_grath; x_grap += Step_grath)
             {
-                PointF Point_1;
-                PointF Point_2;
-                Point_1 = new PointF(0, 0);
-                Point_2 = new PointF(0, 0);
-                Rezult = 0;
-                if (x <= 1)
+                if (Math.Round(x_grap, 1) <= 1)
                 {
-                    Rezult = 2 * a * Math.Cos(x) + 3 * x * x;
-                    Point_1 = new PointF(Convert.ToInt32(x), Convert.ToInt32(Rezult));
-                                   }
-                if ((1 > x) && (x <= 2))
-                {
-                    Rezult = a * Math.Sin(x) + 3 * x * x;
-                    Point_1 = new PointF(Convert.ToInt32(x), Convert.ToInt32(Rezult));
+                    Rezult_grath = (float)(2 * a * Math.Cos(x_grap) + 3 * x_grap * x_grap);
+                    Point_1 = new PointF(x_grap, Rezult_grath);
                 }
-                if (x > 2)
+                if ((1 < Math.Round(x_grap, 1)) && (Math.Round(x_grap, 1) <= 2))
                 {
-                    Rezult = a * Math.Log10(x) + Math.Pow(Math.Abs(x), 1.0 / 3.0);
-                    Point_1 = new PointF(Convert.ToInt32(x), Convert.ToInt32(Rezult));
+                    Rezult_grath = (float)(a * Math.Sin(x_grap) + 3 * x_grap * x_grap);
+                    Point_1 = new PointF(x_grap, Rezult_grath);
+                }
+                if (Math.Round(x_grap, 1) > 2)
+                {
+                    Rezult_grath = (float)(a * Math.Log(x_grap) + Math.Pow(Math.Abs(x_grap), 1 / 3f));
+                    Point_1 = new PointF(x_grap, Rezult_grath);
                 }
                 if (Graph_start)
                 {
                     Point_2 = Point_1;
                     Graph_start = false;
                 }
-                F.DrawLine(pn, Point_1, Point_2);
+                F2.DrawLine(pn, Point_2, Point_1);
                 Point_2 = Point_1;
             }
 
