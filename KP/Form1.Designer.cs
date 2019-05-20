@@ -67,35 +67,35 @@
             // задане1ToolStripMenuItem
             // 
             this.задане1ToolStripMenuItem.Name = "задане1ToolStripMenuItem";
-            this.задане1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.задане1ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.задане1ToolStripMenuItem.Text = "Задание 1";
             this.задане1ToolStripMenuItem.Click += new System.EventHandler(this.задане1ToolStripMenuItem_Click);
             // 
             // задание2ToolStripMenuItem
             // 
             this.задание2ToolStripMenuItem.Name = "задание2ToolStripMenuItem";
-            this.задание2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.задание2ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.задание2ToolStripMenuItem.Text = "Задание 2";
             this.задание2ToolStripMenuItem.Click += new System.EventHandler(this.задание2ToolStripMenuItem_Click);
             // 
             // задание3ToolStripMenuItem
             // 
             this.задание3ToolStripMenuItem.Name = "задание3ToolStripMenuItem";
-            this.задание3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.задание3ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.задание3ToolStripMenuItem.Text = "Задание 3";
             this.задание3ToolStripMenuItem.Click += new System.EventHandler(this.задание3ToolStripMenuItem_Click);
             // 
             // задание4ToolStripMenuItem
             // 
             this.задание4ToolStripMenuItem.Name = "задание4ToolStripMenuItem";
-            this.задание4ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.задание4ToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.задание4ToolStripMenuItem.Text = "Задание 4";
             this.задание4ToolStripMenuItem.Click += new System.EventHandler(this.задание4ToolStripMenuItem_Click);
             // 
             // dllToolStripMenuItem
             // 
             this.dllToolStripMenuItem.Name = "dllToolStripMenuItem";
-            this.dllToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dllToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.dllToolStripMenuItem.Text = "DLL(Задание 3)";
             this.dllToolStripMenuItem.Click += new System.EventHandler(this.dllToolStripMenuItem_Click);
             // 
@@ -124,7 +124,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "Глвная";
+            this.Text = "Меню проекта Галямов О.О.";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
