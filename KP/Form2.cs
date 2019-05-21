@@ -45,7 +45,6 @@ namespace KP
             sy = ay1 - Convert.ToInt32(my * ymax);
         }
 
-
         private Double main_func(double x)
         {
             if (Math.Round(x, 1) <= 1)
@@ -62,9 +61,6 @@ namespace KP
             }
             return Rezult;
         }
-
-
-
 
         private void grid_x(Graphics F)
         {
@@ -139,16 +135,6 @@ namespace KP
             }
         }
                
-
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             try

@@ -251,7 +251,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(100, 20);
             this.textBox8.TabIndex = 27;
-            this.textBox8.Text = "3";
+            this.textBox8.Text = "13";
             // 
             // textBox9
             // 
@@ -267,7 +267,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(100, 20);
             this.textBox10.TabIndex = 25;
-            this.textBox10.Text = "3";
+            this.textBox10.Text = "13";
             // 
             // textBox11
             // 
@@ -320,7 +320,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form2";
             this.Text = "Задание 1";
-            this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

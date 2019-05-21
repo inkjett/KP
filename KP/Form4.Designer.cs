@@ -54,7 +54,7 @@
             this.label4.Size = new System.Drawing.Size(115, 13);
             this.label4.TabIndex = 23;
             this.label4.Text = "Элементы в массиве";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+
             // 
             // textBox4
             // 
@@ -62,7 +62,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(468, 20);
             this.textBox4.TabIndex = 22;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+
             // 
             // label3
             // 
@@ -72,7 +72,7 @@
             this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 21;
             this.label3.Text = "Максимальное число";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+
             // 
             // textBox3
             // 
@@ -81,7 +81,7 @@
             this.textBox3.Size = new System.Drawing.Size(119, 20);
             this.textBox3.TabIndex = 20;
             this.textBox3.Text = "20";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+
             // 
             // label2
             // 
@@ -91,7 +91,7 @@
             this.label2.Size = new System.Drawing.Size(110, 13);
             this.label2.TabIndex = 19;
             this.label2.Text = "Минимальное число";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+ 
             // 
             // textBox2
             // 
@@ -100,7 +100,7 @@
             this.textBox2.Size = new System.Drawing.Size(119, 20);
             this.textBox2.TabIndex = 18;
             this.textBox2.Text = "1";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // label1
             // 
@@ -110,7 +110,7 @@
             this.label1.Size = new System.Drawing.Size(122, 13);
             this.label1.TabIndex = 17;
             this.label1.Text = "Размерность массива";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+
             // 
             // textBox1
             // 
@@ -119,7 +119,7 @@
             this.textBox1.Size = new System.Drawing.Size(119, 20);
             this.textBox1.TabIndex = 16;
             this.textBox1.Text = "11";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+  
             // 
             // button1
             // 
