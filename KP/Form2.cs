@@ -46,6 +46,25 @@ namespace KP
         }
 
 
+        private Double main_func(double x)
+        {
+            if (Math.Round(x, 1) <= 1)
+            {
+                Rezult = (float)(2 * a * Math.Cos(x) + 3 * x * x);
+            }
+            if ((1 < Math.Round(x, 1)) && (Math.Round(x, 1) <= 2))
+            {
+                Rezult = (float)(a * Math.Sin(x) + 3 * x * x);
+            }
+            if (Math.Round(x, 1) > 2)
+            {
+                Rezult = (float)(a * Math.Log(x) + Math.Pow(Math.Abs(x), 1 / 3f));
+            }
+            return Rezult;
+        }
+
+
+
 
         private void grid_x(Graphics F)
         {
@@ -170,9 +189,9 @@ namespace KP
             F2.Clear(Color.White);
             double h;
             pictureBox1.Refresh();
-            ax1 = 0; ay1 = 0; ax2 = 0; ay2 = 0;
-            c = pictureBox1.Size.Height - ay1 - ay2;
-            d = pictureBox1.Size.Width - ax1 - ax2;
+            ax1 = 30; ay1 = 20; ax2 = 30; ay2 = 15;
+            c = pictureBox2.Size.Height - ay1 - ay2;
+            d = pictureBox2.Size.Width - ax1 - ax2;
             xmin = Convert.ToDouble(textBox11.Text);
             xmax = Convert.ToDouble(textBox10.Text);
             ymin = Convert.ToDouble(textBox9.Text);
@@ -185,42 +204,20 @@ namespace KP
             axis_x(F2);
             axis_y(F2);
             z_x(F2); z_y(F2);
-            h = 0.1;
+            h = 0.001;
             float Start_grath = float.Parse(textBox3.Text);
             float End_grath = float.Parse(textBox4.Text);
             float Step_grath = float.Parse(textBox5.Text);
             a = Double.Parse(textBox1.Text);
-            bool Graph_start = true;
-            PointF Point_1;
-            PointF Point_2;
-            Point_1 = new PointF(0, 0);
-            Point_2 = new PointF(0, 0);
-            float Rezult_grath = 0;
-            for (float x_grap = Start_grath; x_grap <= End_grath; x_grap += Step_grath)
-            {
-                if (Math.Round(x_grap, 1) <= 1)
-                {
-                    Rezult_grath = (float)(2 * a * Math.Cos(x_grap) + 3 * x_grap * x_grap);
-                    Point_1 = new PointF(x_grap, Rezult_grath);
-                }
-                if ((1 < Math.Round(x_grap, 1)) && (Math.Round(x_grap, 1) <= 2))
-                {
-                    Rezult_grath = (float)(a * Math.Sin(x_grap) + 3 * x_grap * x_grap);
-                    Point_1 = new PointF(x_grap, Rezult_grath);
-                }
-                if (Math.Round(x_grap, 1) > 2)
-                {
-                    Rezult_grath = (float)(a * Math.Log(x_grap) + Math.Pow(Math.Abs(x_grap), 1 / 3f));
-                    Point_1 = new PointF(x_grap, Rezult_grath);
-                }
-                if (Graph_start)
-                {
-                    Point_2 = Point_1;
-                    Graph_start = false;
-                }
-                F2.DrawLine(pn, Point_2, Point_1);
-                Point_2 = Point_1;
-            }
+            Start = Double.Parse(textBox3.Text);
+            End = Double.Parse(textBox4.Text);
+            Step = Double.Parse(textBox5.Text);
+            a = Double.Parse(textBox1.Text);
+            for (double x = Start; x <= End; x += Step)
+                F2.DrawLine(pn, Convert.ToInt32(x * mx) + sx,
+                Convert.ToInt32(main_func(x) * my) + sy,
+                Convert.ToInt32((x + Step) * mx) + sx,
+                Convert.ToInt32(main_func(x + Step) * my) + sy);
 
         }
     }
