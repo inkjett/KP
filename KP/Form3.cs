@@ -33,17 +33,17 @@ namespace KP
                     if (double.TryParse(textBox1.Text, out f))
                     {
                         a = Double.Parse(textBox1.Text);
-                        p = 1;
-                        k = 2;
-                        sum = p;
+                        p = 2;
+                        k = 0;
+                        sum = 0;
                         do
                         {
+                            sum = p + sum;
                             c = (1 + k + Math.Pow(2, k + 2)) / ((k + Math.Pow(2, k + 1)) * ((2 * k + 2) * (2 * k + 3)));
-                            p = p * c;
-                            sum = p;
+                            p = p * c;                           
                             k++;
                         }
-                        while (k <= a);
+                        while (k < a);
                         textBox6.Text = "Сумма=" + sum.ToString() + Environment.NewLine + "Количество элементов=" + (k - 1);
                     }
                 }
@@ -52,14 +52,14 @@ namespace KP
                     if (double.TryParse(textBox2.Text, out f))
                     {
                         eps = Double.Parse(textBox2.Text);
-                        p = 1;
-                        k = 2;
-                        sum = p;
+                        p = 2;
+                        k = 0;
+                        sum = 0;
                         do
-                        {  
+                        {
+                            sum = p + sum;
                             c = (1 + k + Math.Pow(2, k + 2)) / ((k + Math.Pow(2, k + 1)) * ((2 * k + 2) * (2 * k + 3)));
-                            p = p * c;
-                            sum = p;
+                            p = p * c;                            
                             k++;
                         }
                         while (Math.Abs(p) > eps);
